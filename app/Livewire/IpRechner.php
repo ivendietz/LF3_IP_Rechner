@@ -48,7 +48,7 @@ class IpRechner extends Component
 
         $this->ersterHost = long2ip($this->calculateFirstHost($netzAsLong));
         $this->letzterHost = long2ip($this->calculateLastHost($broadcastAsLong));
-        $this->anzahlHosts = $this->calculateNumberOfHosts($subnetAsLong);
+        $this->anzahlHosts = number_format($this->calculateNumberOfHosts($subnetAsLong), 0, ',', '.');
     }
 
     public function updatedIp($value)

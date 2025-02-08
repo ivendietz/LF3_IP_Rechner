@@ -9,12 +9,12 @@
     <div>
         <x-input-label for="subnet" :value="__('Subnetzmaske')" />
         <x-text-input wire:model.live="subnet" id="subnet" name="subnet" type="text" class="mt-1 block w-full"
-            required autocomplete="username" />
+            required />
         <x-input-error class="mt-2" :messages="$errors->get('subnet')" />
     </div>
 
     <div class="flex items-center gap-4 mt-4 mb-4">
-        <x-primary-button wire:click='calculate'>{{ __('Berechnen') }}</x-primary-button>
+        <x-primary-button wire:click='calculate' :disabled="$errors->isNotEmpty()">{{ __('Berechnen') }}</x-primary-button>
     </div>
 
     <div class="grid grid-cols-2 gap-4">

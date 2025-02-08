@@ -3,9 +3,9 @@
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'welcome');
-Route::view('/ip4', 'ipRechnern')
+Route::view('/ip4', 'ipRechner')
     ->middleware(['auth', 'verified'])
-    ->name('ipRechnern');
+    ->name('ipRechner');
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
